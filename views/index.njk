@@ -1,0 +1,10 @@
+{% extends "layout/base.njk" %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1><span class="fa fa-lock"></span>&nbsp;Authentication</h1>
+
+    <p>Login:</p>
+    <a href="/auth/google{% if _next != undefined  %}?_next={{_next}}{% endif %}" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{
+    "apps" : [{
+      "name": "HTTP-Proxy",
+      "script": "server.js",
+      "instances": "max",
+      "watch": false,
+      "exec_mode" : "cluster",
+      "max_memory_restart": "128M",
+      "env": {
+          "NODE_ENV":"development",
+          "PORT":"9000",
+          "LOCAL_URL":"http://localhost:9000",
+          "PROXY_HOST":"http://www.google.com",
+
+          "MONGO_URI_PASSPORT":"mongodb://localhost/passport",
+          "MONGO_URI_PASSPORT_SESSIONS":"mongodb://localhost/sessions_passport",
+
+          "PASSPORT_SESSION_SECRET":"-----",
+
+          "GOOGLE_CLIENT_ID":"----.apps.googleusercontent.com",
+          "GOOGEL_CLIENT_SECRET":"----"
+      },
+      "env_prod": {
+          "NODE_ENV":"production"
+
+      }
+    }]
+}
